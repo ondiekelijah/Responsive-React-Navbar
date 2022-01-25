@@ -10,6 +10,8 @@ function Navbar() {
     const [click, setClick] = useState(false);
   
     const handleClick = () => setClick(!click);
+    const closeMobileMenu = () => setClick(false);
+
 
     return (
         <nav className="NavbarItems" >
@@ -21,7 +23,7 @@ function Navbar() {
                 {MenuItems.map((item, index) => {
                     return (
                         <li key={index} className='nav-item'>
-                            <Link className={item.cName} to={item.url}>
+                            <Link className={item.cName} to={item.url} onClick={closeMobileMenu}>
                                 {item.title}
                             </Link>
                         </li>
